@@ -1,19 +1,12 @@
-from array import array
-
-def insertion_sort(s):
-    s=[11,1,2,3,3,2]
-
-    k=0
-    for i in range(1,len(s)):
-        for k in range(0,len(s)):
-            if (s[i]<s[k]):
-
-                s[k],s[i]=s[i],s[k]
-
-            k+=1
-
-
-    return s
-
-s=[11,1,2,3,3,2]
-insertion_sort(s)
+def insertion_sort(arr):
+    for i in range(1,len(arr)):
+        j=i-1
+        while j>=0 and arr[j+1]<arr[j]:
+            arr[j+1],arr[j]=arr[j],arr[j+1]
+            j=j-1
+    return(arr)
+        
+if __name__=="__main__":       
+    arr=[9,1,2,3,7,2,6]
+    print(insertion_sort(arr))
+    
